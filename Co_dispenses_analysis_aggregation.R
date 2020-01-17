@@ -3,6 +3,7 @@
 Data_Dir="/n/scratch2/DL_temp/PGx"
 
 All_OL=NULL
+
 for (TaskID in 1:10){
   
   X=load(paste0(Data_Dir,'/Co_dispenses_',TaskID,'.Rdata'))
@@ -13,6 +14,12 @@ for (TaskID in 1:10){
  
 }
 head(All_OL)
+
+save(All_OL,file = "AllPeople_Co_dispenses.Rdata")
+load("AllPeople_Co_dispenses.Rdata")
+head(All_OL)
+
+length(unique(All_OL$MemberId))
 
 ##Get age group 
 X=load(file.path(Data_Dir,"PGx_Cohort_Members_2016_2019.Rdata"))
@@ -25,8 +32,9 @@ All_OL$AgeGroup="NA"
 All_OL$AgeGroup[(All_OL$BirthYear>=2002)&(All_OL$BirthYear<=2016)]="0-17"
 All_OL$AgeGroup[(All_OL$BirthYear>=1955)&(All_OL$BirthYear<=1998)]="18-64"
 sum(All_OL$AgeGroup=="NA")
-
-
+All_OL=All_OL[!All_OL$AgeGroup=="NA",]
+head(All_OL)
+dim(All_OL)
 #Load MAPB list 
 
 MAPB_List=read.csv("MAPB_NDCs_2020_0106-1.txt",sep = "\t",colClasses = "character")

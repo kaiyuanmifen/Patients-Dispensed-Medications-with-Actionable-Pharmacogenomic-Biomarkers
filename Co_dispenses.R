@@ -123,4 +123,4 @@ for (i in  (((TaskID-1)*100+1):(TaskID*100))){
 }
 
 
-save(Vec_Save,file = paste0(Data_Dir,'/Co_dispenses_',TaskID,'.Rdata'))
+save(Vec_Save,file = paste0(Data_Dir,'/Co_dispenses_',TaskID,'.Rdata'),compress = F)

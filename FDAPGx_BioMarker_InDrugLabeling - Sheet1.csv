@@ -1,0 +1,338 @@
+Drug,Therapeutic Area*,Biomarker†,Labeling Sections
+Abacavir,Infectious Diseases,HLA-B,"Boxed Warning, Dosage and Administration, Contraindications, Warnings and Precautions"
+Abemaciclib (1),Oncology,"ESR
+(Hormone Receptor)","Indications and Usage, Adverse Reactions, Clinical Studies"
+Abemaciclib (2),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Adverse Reactions, Clinical Studies"
+Ado-Trastuzumab Emtansine,Oncology,"ERBB2 
+(HER2)","Indications and Usage, Warnings and Precautions, Adverse Reactions, Clinical Pharmacology, Clinical Studies"
+Afatinib,Oncology,EGFR,"Indications and Usage, Dosage and Administration, Adverse Reactions, Clinical Studies"
+Alectinib,Oncology,ALK,"Indications and Usage, Dosage and Administration, Adverse Reactions, Clinical Pharmacology, Clinical Studies"
+Amitriptyline,Psychiatry,CYP2D6,Precautions
+Anastrozole,Oncology,"ESR, PGR 
+(Hormone Receptor)","Indications and Usage, Adverse Reactions, Drug Interactions, Clinical Studies"
+Arformoterol (1),Pulmonary,UGT1A1,Clinical Pharmacology
+Arformoterol (2),Pulmonary,CYP2D6,Clinical Pharmacology
+Aripiprazole,Psychiatry,CYP2D6,"Dosage and Administration, Use in Specific Populations, Clinical Pharmacology"
+Aripiprazole Lauroxil,Psychiatry,CYP2D6,"Dosage and Administration, Use in Specific Populations, Clinical Pharmacology"
+Arsenic Trioxide,Oncology,PML-RARA,Indications and Usage
+Atezolizumab,Oncology,"CD274 
+(PD-L1)","Adverse Reactions, Clinical Pharmacology, Clinical Studies"
+Atomoxetine,Psychiatry,CYP2D6,"Dosage and Administration, Warnings and Precautions, Adverse Reactions, Drug Interactions, Clinical Pharmacology"
+"Ascorbic Acid, PEG-3350, Potassium Chloride, Sodium Ascorbate, Sodium Chloride, and Sodium Sulfate",Gastroenterology,G6PD,Warnings and Precautions
+Avelumab,Oncology,"CD274 
+(PD-L1)",Clinical Studies
+Azathioprine,Rheumatology,TPMT,"Dosage and Administration, Warnings, Precautions, Drug Interactions, Adverse Reactions, Clinical Pharmacology"
+Belinostat,Oncology,UGT1A1,"Dosage and Administration, Clinical Pharmacology"
+Blinatumomab,Oncology,"BCR-ABL1 
+(Philadelphia chromosome)","Indications and Usage, Clinical Studies"
+Boceprevir,Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Pharmacology
+Bosutinib,Oncology,"BCR-ABL1 
+(Philadelphia chromosome)","Indications and Usage, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Brentuximab Vedotin,Oncology,ALK,Clinical Studies
+Brexpiprazole,Psychiatry,CYP2D6,"Dosage and Administration, Use in Specific Populations, Clinical Pharmacology"
+Brigatinib,Oncology,ALK,"Indications and Usage, Adverse Reactions, Clinical Studies"
+Brivaracetam,Neurology,CYP2C19,Clinical Pharmacology
+Busulfan,Oncology,"BCR-ABL1 
+(Philadelphia chromosome)",Clinical Studies
+Cabozantinib,Oncology,RET,Clinical Studies
+Capecitabine,Oncology,DPYD,"Warnings and Precautions, Patient Counseling Information"
+Carbamazepine (1),Neurology,HLA-B,"Boxed Warning, Warnings, Precautions"
+Carbamazepine (2),Neurology,HLA-A,Warnings
+Carglumic Acid,Inborn Errors of Metabolism,NAGS,"Indications and Usage, Warnings and Precautions, Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Cariprazine,Psychiatry,CYP2D6,Clinical Pharmacology
+Carisoprodol,Rheumatology,CYP2C19,"Use in Specific Populations, Clinical Pharmacology"
+Carvedilol,Cardiology,CYP2D6,"Drug Interactions, Clinical Pharmacology"
+Celecoxib,Rheumatology,CYP2C9,"Dosage and Administration, Use in Specific Populations, Clinical Pharmacology"
+Ceritinib,Oncology,ALK,"Indications and Usage, Dosage and Administration, Adverse Reactions, Clinical Studies"
+Cerliponase Alfa,Inborn Errors of Metabolism,TPP1,"Indications and Usage, Use in Specific Populations, Clinical Studies"
+Cetuximab (1),Oncology,EGFR,"Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Clinical Studies"
+Cetuximab (2),Oncology,RAS,"Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Clinical Studies"
+Cevimeline,Dental,CYP2D6,Precautions
+Chloroquine,Infectious Diseases,G6PD,Precautions
+Chlorpropamide,Endocrinology,G6PD,Precautions
+Cisplatin,Oncology,TPMT,Adverse Reactions
+Citalopram (1),Psychiatry,CYP2C19,"Dosage and Administration, Warnings, Clinical Pharmacology"
+Citalopram (2),Psychiatry,CYP2D6,Clinical Pharmacology
+Clobazam,Neurology,CYP2C19,"Dosage and Administration, Use in Specific Populations, Clinical Pharmacology"
+Clomipramine,Psychiatry,CYP2D6,Precautions
+Clopidogrel,Cardiology,CYP2C19,"Boxed Warning, Warnings and Precautions, Clinical Pharmacology"
+Clozapine,Psychiatry,CYP2D6,"Dosage and Administration, Use in Specific Populations, Clinical Pharmacology"
+Cobimetinib,Oncology,BRAF,"Indications and Usage, Dosage and Administration, Adverse Reactions, Clinical Studies"
+Codeine,Anesthesiology,CYP2D6,"Boxed Warning, Warnings and Precautions, Use in Specific Populations, Patient Counseling Information"
+Crizotinib (1),Oncology,ALK,"Indications and Usage, Dosage and Administration, Adverse Reactions, Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Crizotinib (2),Oncology,ROS1,"Indications and Usage, Dosage and Administration, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Dabrafenib (1),Oncology,BRAF,"Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Clinical Pharmacology, Clinical Studies, Patient Counseling Information"
+Dabrafenib (2),Oncology,G6PD,"Warnings and Precautions, Adverse Reactions, Patient Counseling Information"
+Dabrafenib (3),Oncology,RAS,"Dosage and Administration, Warnings and Precautions"
+Daclatasvir,Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+Dapsone (1),Dermatology,G6PD,"Warnings and Precautions, Use in Specific Populations"
+Dapsone (2),Dermatology,"Nonspecific 
+(Congenital Methemoglobinemia)",Warnings and Precautions
+Dapsone (3),Infectious Diseases,G6PD,"Precautions, Adverse Reactions, Overdosage"
+Darifenacin,Urology,CYP2D6,Clinical Pharmacology
+"Dasabuvir, Ombitasvir, Paritaprevir, and Ritonavir",Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+Dasatinib,Oncology,"BCR-ABL1 
+(Philadelphia chromosome)","Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Clinical Studies"
+Denileukin Diftitox,Oncology,"IL2RA 
+(CD25 antigen)","Indications and Usage, Warnings and Precautions, Clinical Studies"
+Desipramine,Psychiatry,CYP2D6,Precautions
+Desflurane,Anesthesiology,"Nonspecific 
+(Genetic Susceptibility to Malignant Hyperthermia)",Contraindications
+Desvenlafaxine,Psychiatry,CYP2D6,Clinical Pharmacology
+Deutetrabenazine,Neurology,CYP2D6,"Dosage and Administration, Warnings and Precautions, Use in Specific Populations, Clinical Pharmacology"
+Dexlansoprazole,Gastroenterology,CYP2C19,"Drug Interactions, Clinical Pharmacology"
+Dextromethorphan and Quinidine,Neurology,CYP2D6,"Warnings and Precautions, Clinical Pharmacology"
+Diazepam,Neurology,CYP2C19,Clinical Pharmacology
+Dinutuximab,Oncology,MYCN,Clinical Studies
+Dolutegravir,Infectious Diseases,UGT1A1,Clinical Pharmacology
+Doxepin (1),Psychiatry,CYP2D6,Clinical Pharmacology
+Doxepin (2),Psychiatry,CYP2C19,Clinical Pharmacology
+Dronabinol,Gastroenterology,CYP2C9,"Use in Specific Populations, Clinical Pharmacology"
+Drospirenone and Ethinyl Estradiol,Gynecology,CYP2C19,Clinical Pharmacology
+Duloxetine,Psychiatry,CYP2D6,Drug Interactions
+Durvalumab,Oncology,"CD274
+(PD-L1)","Clinical Pharmacology, Clinical Studies"
+Efavirenz,Infectious Diseases,CYP2B6,Clinical Pharmacology
+Elbasvir and Grazoprevir,Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+Eliglustat,Inborn Errors of Metabolism,CYP2D6,"Indications and Usage, Dosage and Administration, Contraindications, Warnings and Precautions, Drug Interactions, Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Elosulfase,Inborn Errors of Metabolism,GALNS,"Indications and Usage, Warnings and Precautions, Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Eltrombopag (1),Hematology,"F5 
+(Factor V Leiden)",Warnings and Precautions
+Eltrombopag (2),Hematology,"SERPINC1 
+(Antithrombin III)",Warnings and Precautions
+Enasidenib,Oncology,IDH2,"Indications and Usage, Dosage and Administration, Clinical Pharmacology, Clinical Studies"
+Enflurane,Anesthesiology,"Nonspecific 
+(Genetic Susceptibility to Malignant Hyperthermia)",Contraindications
+Erlotinib,Oncology,EGFR,"Indications and Usage, Dosage and Administration, Adverse Reactions, Clinical Studies"
+Erythromycin and Sulfisoxazole,Infectious Diseases,G6PD,Precautions
+Escitalopram (1),Psychiatry,CYP2D6,Drug Interactions
+Escitalopram (2),Psychiatry,CYP2C19,Adverse Reactions
+Esomeprazole,Gastroenterology,CYP2C19,"Drug Interactions, Clinical Pharmacology"
+Eteplirsen,Neurology,DMD,"Indications and Usage, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Everolimus (1),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Drug Interactions, Use in Specific Populations, Clinical Studies"
+Everolimus (2),Oncology,"ESR 
+(Hormone Receptor)","Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Drug Interactions, Use in Specific Populations, Clinical Studies"
+Exemestane,Oncology,"ESR, PGR 
+(Hormone Receptor)","Indications and Usage, Dosage and Administration, Clinical Studies"
+Fesoterodine,Urology,CYP2D6,"Drug Interactions, Clinical Pharmacology"
+Flibanserin (1),Gynecology,CYP2C9,Clinical Pharmacology
+Flibanserin (2),Gynecology,CYP2C19,"Adverse Reactions, Use in Specific Populations, Clinical Pharmacology"
+Flibanserin (3),Gynecology,CYP2D6,Clinical Pharmacology
+Fluorouracil (1),Dermatology,DPYD,"Contraindications, Warnings"
+Fluorouracil (2),Oncology,DPYD,"Warnings and Precautions, Patient Counseling Information"
+Fluoxetine,Psychiatry,CYP2D6,"Precautions, Clinical Pharmacology"
+Flurbiprofen,Rheumatology,CYP2C9,Clinical Pharmacology
+Fluvoxamine,Psychiatry,CYP2D6,Drug Interactions
+Formoterol (1),Pulmonary,CYP2D6,Clinical Pharmacology
+Formoterol (2),Pulmonary,CYP2C19,Clinical Pharmacology
+Fulvestrant (1),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Adverse Reactions, Clinical Studies"
+Fulvestrant (2),Oncology,"ESR, PGR 
+(Hormone Receptor)","Indications and Usage, Adverse Reactions, Clinical Pharmacology, Clinical Studies"
+Galantamine,Neurology,CYP2D6,Clinical Pharmacology
+Gefitinib,Oncology,EGFR,"Indications and Usage, Dosage and Administration, Clinical Studies"
+Glimepiride,Endocrinology,G6PD,"Warnings and Precautions, Adverse Reactions"
+Glipizide,Endocrinology,G6PD,Precautions
+Glyburide,Endocrinology,G6PD,Precautions
+Hydralazine,Cardiology,"Nonspecific 
+(NAT)",Clinical Pharmacology
+Ibrutinib (1),Oncology,Chromosome 17p,"Indications and Usage, Clinical Studies"
+Ibrutinib (2),Oncology,Chromosome 11q,Clinical Studies
+Iloperidone,Psychiatry,CYP2D6,"Dosage and Administration, Warnings and Precautions, Drug Interactions, Clinical Pharmacology"
+Imatinib (1),Oncology,KIT,"Indications and Usage, Dosage and Administration, Clinical Studies"
+Imatinib (2),Oncology,"BCR-ABL1 
+(Philadelphia chromosome)","Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Imatinib (3),Oncology,PDGFRB,"Indications and Usage, Dosage and Administration, Clinical Studies"
+Imatinib (4),Oncology,FIP1L1-PDGFRA,"Indications and Usage, Dosage and Administration, Clinical Studies"
+Imipramine,Psychiatry,CYP2D6,Precautions
+Indacaterol,Pulmonary,UGT1A1,Clinical Pharmacology
+Inotuzumab Ozogamicin,Oncology,"BCR-ABL1 
+(Philadelphia chromosome)",Clinical Studies
+Irinotecan,Oncology,UGT1A1,"Dosage and Administration, Warnings and Precautions, Clinical Pharmacology"
+Isoflurane,Anesthesiology,"Nonspecific 
+(Genetic Susceptibility to Malignant Hyperthermia)",Contraindications
+"Isoniazid, Pyrazinamide, and Rifampin",Infectious Diseases,"Nonspecific 
+(NAT)",Clinical Pharmacology
+Isosorbide Dinitrate,Cardiology,CYB5R,Overdosage
+Isosorbide Mononitrate,Cardiology,CYB5R,Overdosage
+Ivacaftor,Pulmonary,CFTR,"Indications and Usage, Adverse Reactions, Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Ivacaftor and Lumacaftor,Pulmonary,CFTR,"Indications and Usage, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Lacosamide,Neurology,CYP2C19,Clinical Pharmacology
+Lansoprazole,Gastroenterology,CYP2C19,"Drug Interactions, Clinical Pharmacology"
+Lapatinib (1),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Dosage and Administration, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Lapatinib (2),Oncology,"ESR, PGR 
+(Hormone Receptor)","Indications and Usage, Dosage and Administration, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Lapatinib (3),Oncology,"HLA-DQA1, HLA-DRB1",Clinical Pharmacology
+Ledipasvir and Sofosbuvir,Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+Lenalidomide,Hematology,Chromosome 5q,"Boxed Warning, Indications and Usage, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Lesinurad,Rheumatology,CYP2C9,"Drug Interactions, Clinical Pharmacology"
+Letrozole,Oncology,"ESR, PGR 
+(Hormone Receptor)","Indications and Usage, Adverse Reactions, Clinical Studies"
+Lidocaine and Prilocaine (1),Anesthesiology,"Nonspecific 
+(Congenital Methemoglobinemia)",Warnings and Precautions
+Lidocaine and Prilocaine (2),Anesthesiology,G6PD,"Warnings and Precautions, Clinical Pharmacology"
+Mafenide,Infectious Diseases,G6PD,"Warnings, Adverse Reactions"
+Mercaptopurine,Oncology,TPMT,"Dosage and Administration, Warnings, Precautions, Adverse Reactions, Clinical Pharmacology"
+Methylene Blue,Hematology,G6PD,"Contraindications, Warnings and Precautions"
+Metoclopramide (1),Gastroenterology,CYB5R,"Precautions, Overdosage"
+Metoclopramide (2),Gastroenterology,G6PD,"Precautions, Overdosage"
+Metoprolol,Cardiology,CYP2D6,"Drug Interactions, Clinical Pharmacology"
+Midostaurin (1),Oncology,FLT3,"Indications and Usage, Dosage and Administration, Adverse Reactions, Clinical Studies"
+Midostaurin (2),Oncology,NPM1,Clinical Studies
+Midostaurin (3),Oncology,KIT,Clinical Studies
+Mirabegron,Urology,CYP2D6,Clinical Pharmacology
+Modafinil,Psychiatry,CYP2D6,Clinical Pharmacology
+Mycophenolic Acid,Transplantation,HPRT1,Warnings and Precautions
+Nalidixic Acid,Infectious Diseases,G6PD,"Precautions, Adverse Reactions"
+Nebivolol,Cardiology,CYP2D6,"Dosage and Administration, Clinical Pharmacology"
+Nefazodone,Psychiatry,CYP2D6,Precautions
+Neratinib (1),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Adverse Reactions, Clinical Studies"
+Neratinib (2),Oncology,"ESR, PGR 
+(Hormone Receptor)",Clinical Studies
+Nilotinib (1),Oncology,"BCR-ABL1 
+(Philadelphia chromosome)","Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Nilotinib (2),Oncology,UGT1A1,Clinical Pharmacology
+Niraparib,Oncology,BRCA,Clinical Studies
+Nitrofurantoin,Infectious Diseases,G6PD,"Warnings, Adverse Reactions"
+Nivolumab (1),Oncology,BRAF,"Indications and Usage, Adverse Reactions, Clinical Studies"
+Nivolumab (2),Oncology,"CD274
+(PD-L1)","Clinical Pharmacology, Clinical Studies"
+Nivolumab (3),Oncology,"Microsatellite Instability, Mismatch Repair","Indications and Usage, Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Nortriptyline,Psychiatry,CYP2D6,Precautions
+Obinutuzumab,Oncology,"MS4A1 
+(CD20 antigen)",Clinical Studies
+Olaparib,Oncology,BRCA,"Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Clinical Studies"
+Olaratumab,Oncology,PDGFRA,Clinical Studies
+Omacetaxine,Oncology,"BCR-ABL1 
+(Philadelphia chromosome)",Clinical Studies
+"Ombitasvir, Paritaprevir, and Ritonavir",Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+Omeprazole,Gastroenterology,CYP2C19,"Drug Interactions, Clinical Pharmacology"
+Ondansetron,Gastroenterology,CYP2D6,Clinical Pharmacology
+Osimertinib,Oncology,EGFR,"Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Clinical Studies"
+Oxcarbazepine,Neurology,HLA-B,Warnings and Precautions
+Palbociclib (1),Oncology,"ESR 
+(Hormone Receptor)","Indications and Usage, Adverse Reactions, Clinical Studies"
+Palbociclib (2),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Adverse Reactions, Clinical Studies"
+Palonosetron,Gastroenterology,CYP2D6,Clinical Pharmacology
+Panitumumab (1),Oncology,EGFR,"Adverse Reactions, Clinical Pharmacology, Clinical Studies"
+Panitumumab (2),Oncology,RAS,"Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Clinical Studies"
+Pantoprazole,Gastroenterology,CYP2C19,Clinical Pharmacology
+Parathyroid Hormone,Inborn Errors of Metabolism,CASR,"Indications and Usage, Clinical Studies"
+Paroxetine,Psychiatry,CYP2D6,Drug Interactions
+Pazopanib (1),Oncology,UGT1A1,Clinical Pharmacology
+Pazopanib (2),Oncology,HLA-B,Clinical Pharmacology
+Peginterferon Alfa-2b,Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Pharmacology
+Pegloticase,Rheumatology,G6PD,"Boxed Warning, Contraindications, Warnings and Precautions, Patient Counseling Information"
+Pembrolizumab (1),Oncology,BRAF,"Adverse Reactions, Clinical Studies"
+Pembrolizumab (2),Oncology,"CD274 
+(PD-L1)","Indications and Usage, Dosage and Administration, Use in Specific Populations, Clinical Studies"
+Pembrolizumab (3),Oncology,"Microsatellite Instability, Mismatch Repair","Indications and Usage,
+Dosage and Administration, Use in Specific Populations, Clinical Studies"
+Perphenazine,Psychiatry,CYP2D6,"Precautions, Clinical Pharmacology"
+Pertuzumab (1),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Warnings and Precautions, Adverse Reactions, Clinical Pharmacology, Clinical Studies"
+Pertuzumab (2),Oncology,"ESR, PGR 
+(Hormone Receptor)",Clinical Studies
+Phenytoin (1),Neurology,CYP2C9,Clinical Pharmacology
+Phenytoin (2),Neurology,CYP2C19,Clinical Pharmacology
+Phenytoin (3),Neurology,HLA-B,Warnings
+Pimozide,Psychiatry,CYP2D6,"Dosage and Administration, Precautions"
+Piroxicam,Rheumatology,CYP2C9,Clinical Pharmacology
+Ponatinib,Oncology,"BCR-ABL1 
+(Philadelphia chromosome)","Indications and Usage, Warnings and Precautions, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Prasugrel (1),Cardiology,CYP2C19,"Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Prasugrel (2),Cardiology,CYP2C9,"Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Prasugrel (3),Cardiology,CYP3A5,"Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Prasugrel (4),Cardiology,CYP2B6,"Use in Specific Populations, Clinical Pharmacology, Clinical Studies"
+Primaquine (1),Infectious Diseases,G6PD,"Contraindications, Warnings, Precautions, Adverse Reactions, Overdosage"
+Primaquine (2),Infectious Diseases,CYB5R,"Precautions, Adverse Reactions"
+Propafenone,Cardiology,CYP2D6,"Dosage and Administration, Warnings and Precautions, Drug Interactions, Clinical Pharmacology"
+Propranolol,Cardiology,CYP2D6,Clinical Pharmacology
+Protriptyline,Psychiatry,CYP2D6,Precautions
+Quinidine,Cardiology,CYP2D6,Precautions
+Quinine Sulfate (1),Infectious Diseases,G6PD,Contraindications
+Quinine Sulfate (2),Infectious Diseases,CYP2D6,Drug Interactions
+Rabeprazole,Gastroenterology,CYP2C19,Clinical Pharmacology
+Rasburicase (1),Oncology,G6PD,"Boxed Warning, Contraindications, Warnings and Precautions"
+Rasburicase (2),Oncology,CYB5R,"Boxed Warning, Contraindications, Warnings and Precautions"
+Ribociclib (1),Oncology,"ESR, PGR 
+(Hormone Receptor)","Indications and Usage, Clinical Studies"
+Ribociclib (2),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Clinical Studies"
+Risperidone,Psychiatry,CYP2D6,"Drug Interactions, Clinical Pharmacology"
+Rituximab,Oncology,"MS4A1 
+(CD20 antigen)","Indications and Usage, Dosage and Administration, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Rosuvastatin,Endocrinology,SLCO1B1,Clinical Pharmacology
+Rucaparib (1),Oncology,BRCA,"Indications and Usage, Dosage and Administration, Adverse Reactions, Use in Specific Populations, Clinical Studies"
+Rucaparib (2),Oncology,CYP2D6,Clinical Pharmacology
+Rucaparib (3),Oncology,CYP1A2,Clinical Pharmacology
+Sevoflurane,Anesthesiology,"Nonspecific 
+(Genetic Susceptibility to Malignant Hyperthermia)",Warnings
+Simeprevir,Infectious Diseases,"IFNL3 
+(IL28B)","Clinical Pharmacology, Clinical Studies"
+Sodium Nitrite,Toxicology,G6PD,Warnings and Precautions
+Sofosbuvir,Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+Sofosbuvir and Velpatasvir,Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+"Sofosbuvir, Velpatasvir, and Voxilaprevir",Infectious Diseases,"IFNL3 
+(IL28B)",Clinical Studies
+Succimer,Hematology,G6PD,Clinical Pharmacology
+Succinylcholine,Anesthesiology,BCHE,"Warnings, Precautions"
+Sulfamethoxazole and Trimethoprim (1),Infectious Diseases,G6PD,Precautions
+Sulfamethoxazole and Trimethoprim (2),Infectious Diseases,"Nonspecific 
+(NAT)",Precautions
+Sulfasalazine (1),Gastroenterology,G6PD,Precautions
+Sulfasalazine (2),Gastroenterology,"Nonspecific 
+(NAT)",Clinical Pharmacology
+Tamoxifen (1),Oncology,"ESR, PGR 
+(Hormone Receptor)","Indications and Usage, Precautions, Adverse Reactions, Clinical Studies"
+Tamoxifen (2),Oncology,"F5 
+(Factor V Leiden)",Warnings
+Tamoxifen (3),Oncology,"F2 
+(Prothrombin)",Warnings
+Telaprevir,Infectious Diseases,"IFNL3 
+(IL28B)","Clinical Pharmacology, Clinical Studies"
+Tetrabenazine,Neurology,CYP2D6,"Dosage and Administration, Warnings and Precautions, Use in Specific Populations, Clinical Pharmacology"
+Thioguanine,Oncology,TPMT,"Dosage and Administration, Warnings, Precautions"
+Thioridazine,Psychiatry,CYP2D6,"Contraindications, Warnings, Precautions"
+Ticagrelor,Cardiology,CYP2C19,Clinical Pharmacology
+Tolterodine,Urology,CYP2D6,"Precautions, Clinical Pharmacology"
+Tramadol,Anesthesiology,CYP2D6,"Boxed Warning, Warnings, Precautions, Use in Specific Populations, Clinical Pharmacology"
+Trametinib (1),Oncology,BRAF,"Indications and Usage, Dosage and Administration, Adverse Reactions, Clinical Pharmacology, Clinical Studies, Patient Counseling Information"
+Trametinib (2),Oncology,G6PD,Adverse Reactions
+Trametinib (3),Oncology,RAS,Warnings and Precautions
+Trastuzumab (1),Oncology,"ERBB2 
+(HER2)","Indications and Usage, Warnings and Precautions, Clinical Pharmacology, Clinical Studies"
+Trastuzumab (2),Oncology,"ESR, PGR 
+(Hormone Receptor)",Clinical Studies
+Tretinoin,Oncology,PML-RARA,"Indications and Usage, Warnings, Clinical Pharmacology"
+Trimipramine,Psychiatry,CYP2D6,Precautions
+Umeclidinium,Pulmonary,CYP2D6,Clinical Pharmacology
+Ustekinumab,Dermatology and Gastroenterology,"IL12A, IL12B, IL23A",Warnings and Precautions
+Valbenazine,Neurology,CYP2D6,"Dosage and Administration, Warnings and Precautions, Use in Specific Populations, Clinical Pharmacology"
+Valproic Acid (1),Neurology,POLG,"Boxed Warning, Contraindications, Warnings and Precautions"
+Valproic Acid (2),Neurology,"Nonspecific 
+(Urea Cycle Disorders)","Contraindications, Warnings and Precautions"
+Vemurafenib (1),Oncology,BRAF,"Indications and Usage, Dosage and Administration, Warnings and Precautions, Adverse Reactions, Use in Specific Populations, Clinical Pharmacology, Clinical Studies, Patient Counseling Information"
+Vemurafenib (2),Oncology,RAS,"Warnings and Precautions, Adverse Reactions"
+Venlafaxine,Psychiatry,CYP2D6,Precautions
+Venetoclax,Oncology,Chromosome 17p,"Indications and Usage, Dosage and Administration, Use in Specific Populations, Clinical Studies"
+Voriconazole,Infectious Diseases,CYP2C19,Clinical Pharmacology
+Vortioxetine,Psychiatry,CYP2D6,"Dosage and Administration, Clinical Pharmacology"
+Warfarin (1),Hematology,CYP2C9,"Dosage and Administration, Drug Interactions, Clinical Pharmacology"
+Warfarin (2),Hematology,VKORC1,"Dosage and Administration, Clinical Pharmacology"
+Warfarin (3),Hematology,PROS1,Warnings and Precautions
+Warfarin (4),Hematology,PROC,Warnings and Precautions

@@ -232,7 +232,7 @@ AgeNGender=ggplot(data=PlotVec, aes(x=reorder(Sex,Percentage), y=Percentage)) +
 
 #Co_dispenses
 
-load("Co_dispenses_Aggregated.Rdata")
+#load("Co_dispenses_Aggregated.Rdata")
 
 print(paste0("people co-dispensed PGx ",NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses))
 
@@ -256,14 +256,16 @@ Vec/c(NumberOfChildrens,NumberOfAdults)
 #co-dispenses on the same therapeutic area
 #% dispensed on the same therpeutic area 
 signif(100*table(On_the_Same_FDA_Therapeutic_Area$AgeGroup)/c(NumberOfChildrens,NumberOfAdults),digits = 2)
-table(On_the_Same_FDA_Therapeutic_Area$AgeGroup)
+print(paste(length(unique(On_the_Same_FDA_Therapeutic_Area$MemberId[On_the_Same_FDA_Therapeutic_Area$AgeGroup=="0-17"]))," children co-dispensed with MAPB from same therapeutic area"))
+print(paste(length(unique(On_the_Same_FDA_Therapeutic_Area$MemberId[On_the_Same_FDA_Therapeutic_Area$AgeGroup=="18-64"]))," children co-dispensed with MAPB from same therapeutic area"))
+
 Vec=table(On_the_Same_FDA_Therapeutic_Area[,c("FDA_Therapeutic_Area_1","AgeGroup")])
 Vec=Vec[order(Vec[,1]+Vec[,2],decreasing = T),]
 Vec/c(NumberOfChildrens,NumberOfAdults)
 
 
 #Co-dispenses by genetic biomarker and age group in population percentage (figue 1 D)
-VecPlot=Vec_Save[Vec_Save$Same_Biomarker==T,]
+VecPlot=All_OL[All_OL$Same_Biomarker==T,]
 VecPlot$FDA_Biomarker_1=gsub(",.*$", "",VecPlot$FDA_Biomarker_1)
 VecPlot=VecPlot[VecPlot$FDA_Biomarker_1!='',]
 dim(VecPlot)
@@ -289,8 +291,8 @@ Co_Hit_biomarker_A_C<-ggplot(data=VecPlot, aes(x=reorder(GeneticBiomarker,TotalP
 
 
 #Supplementary figure 1
-head(Vec_Save)
-VecPlot=Vec_Save$MemberId[Vec_Save$AgeGroup=='0-17']
+head(All_OL)
+VecPlot=All_OL$MemberId[All_OL$AgeGroup=='0-17']
 VecPlot=table(VecPlot)/2#symetric 
 VecPlot=data.frame(VecPlot)
 
@@ -300,7 +302,7 @@ Children=ggplot(VecPlot, aes(x=`Number of co-dispensed MAPB pairs`)) + geom_hist
         panel.background = element_blank(),panel.grid.major = element_line(colour = "grey", size = 0.5),
         plot.margin=margin(t = 1.5, r = 1.5, b = 1.5, l = 1.5, unit = "cm"))
 
-VecPlot=Vec_Save$MemberId[Vec_Save$AgeGroup=='18-64']
+VecPlot=All_OL$MemberId[All_OL$AgeGroup=='18-64']
 VecPlot=table(VecPlot)/2 #Symetric 
 VecPlot=data.frame(VecPlot)
 names(VecPlot)[2]="Number of co-dispensed MAPB pairs"
@@ -365,6 +367,7 @@ Supp_Table_1$Adult_Count[match(Table1$Adult_MAPB,Supp_Table_1$MAPB)]==Table1$Adu
 sum(Supp_Table_2$Male_Count+Supp_Table_2$Female_Count)>Number_Of_People_on_MAPB
 sum(Gender_On_MAPB_headCount_Table)>Number_Of_People_on_MAPB
 
-length(unique(Vec_Save$MemberId))
+length(unique(All_OL$MemberId))
+NumberOfChildrens_Co_dispenses+NumberOfAdults_Co_dispenses==length(unique(All_OL$MemberId))
 
 
