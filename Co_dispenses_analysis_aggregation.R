@@ -2,17 +2,17 @@
 
 Data_Dir="/n/scratch2/DL_temp/PGx"
 
-Vec_Save=NULL
+All_OL=NULL
 for (TaskID in 1:10){
   
   X=load(paste0(Data_Dir,'/Co_dispenses_',TaskID,'.Rdata'))
   Vec=get(X)
-  Vec_Save=rbind(Vec_Save,Vec)
+  All_OL=rbind(All_OL,Vec)
   
   print(paste0("task ",TaskID))
  
 }
-head(Vec_Save)
+head(All_OL)
 
 ##Get age group 
 X=load(file.path(Data_Dir,"PGx_Cohort_Members_2016_2019.Rdata"))
@@ -20,11 +20,11 @@ PGx_Cohort_Members=get(X)
 
 #left join 
 library(dplyr)
-Vec_Save=left_join(Vec_Save,PGx_Cohort_Members[,c("MemberId","BirthYear")],by = c("MemberId" = "MemberId"))
-Vec_Save$AgeGroup="NA"
-Vec_Save$AgeGroup[(Vec_Save$BirthYear>=2002)&(Vec_Save$BirthYear<=2016)]="0-17"
-Vec_Save$AgeGroup[(Vec_Save$BirthYear>=1955)&(Vec_Save$BirthYear<2002)]="18-64"
-sum(Vec_Save$AgeGroup=="NA")
+All_OL=left_join(All_OL,PGx_Cohort_Members[,c("MemberId","BirthYear")],by = c("MemberId" = "MemberId"))
+All_OL$AgeGroup="NA"
+All_OL$AgeGroup[(All_OL$BirthYear>=2002)&(All_OL$BirthYear<=2016)]="0-17"
+All_OL$AgeGroup[(All_OL$BirthYear>=1955)&(All_OL$BirthYear<=1998)]="18-64"
+sum(All_OL$AgeGroup=="NA")
 
 
 #Load MAPB list 
@@ -48,37 +48,37 @@ head(MAPB_List)
 
 
 #Update the co-dispenses with biomarker information and therapeutic area information 
-names(Vec_Save)=c("MemberId" ,"MAPB_name1","Intervals1" , "MAPB_name2","Intervals2" ,"OverLap","OverLap_number_days","BirthYear","AgeGroup")
+names(All_OL)=c("MemberId" ,"MAPB_name1","Intervals1" , "MAPB_name2","Intervals2" ,"OverLap","OverLap_number_days","BirthYear","AgeGroup")
 
-Vec_Save$FDA_Therapeutic_Area_1=MAPB_List$FDA_Therapeutic_Area[match(Vec_Save$MAPB_name1,MAPB_List$MAPB_name)]
-Vec_Save$FDA_Biomarker_1=MAPB_List$FDA_Biomarker[match(Vec_Save$MAPB_name1,MAPB_List$MAPB_name)]
+All_OL$FDA_Therapeutic_Area_1=MAPB_List$FDA_Therapeutic_Area[match(All_OL$MAPB_name1,MAPB_List$MAPB_name)]
+All_OL$FDA_Biomarker_1=MAPB_List$FDA_Biomarker[match(All_OL$MAPB_name1,MAPB_List$MAPB_name)]
 
-Vec_Save$FDA_Therapeutic_Area_2=MAPB_List$FDA_Therapeutic_Area[match(Vec_Save$MAPB_name2,MAPB_List$MAPB_name)]
-Vec_Save$FDA_Biomarker_2=MAPB_List$FDA_Biomarker[match(Vec_Save$MAPB_name2,MAPB_List$MAPB_name)]
+All_OL$FDA_Therapeutic_Area_2=MAPB_List$FDA_Therapeutic_Area[match(All_OL$MAPB_name2,MAPB_List$MAPB_name)]
+All_OL$FDA_Biomarker_2=MAPB_List$FDA_Biomarker[match(All_OL$MAPB_name2,MAPB_List$MAPB_name)]
 
 #results  to save 
 
 NumberOfChildrens=sum((PGx_Cohort_Members$BirthYear>=2002)&(PGx_Cohort_Members$BirthYear<=2016))
 NumberOfAdults=sum((PGx_Cohort_Members$BirthYear>=1955)&(PGx_Cohort_Members$BirthYear<=1998))
 
-Vec=unique(Vec_Save[,c("MemberId","AgeGroup")])
+Vec=unique(All_OL[,c("MemberId","AgeGroup")])
 
-Vec=table(Vec_Save$AgeGroup)
+Vec=table(Vec$AgeGroup )
 NumberOfChildrens_Co_dispenses=Vec[1]
 NumberOfAdults_Co_dispenses=Vec[2]
 
-Vec_Save$MAPB_pair=paste0(Vec_Save$MAPB_name1,'-',Vec_Save$MAPB_name2)
-Vec=unique(Vec_Save[,c("MemberId","MAPB_pair","AgeGroup")])
+All_OL$MAPB_pair=paste0(All_OL$MAPB_name1,'-',All_OL$MAPB_name2)
+Vec=unique(All_OL[,c("MemberId","MAPB_pair","AgeGroup")])
 MAPB_pair_Co_dispenses=table(Vec$MAPB_pair)
 
-Vec_Save$Same_Biomarker=Vec_Save$FDA_Biomarker_1==Vec_Save$FDA_Biomarker_2
-Vec=Vec_Save[,c("MemberId","FDA_Biomarker_1","Same_Biomarker","AgeGroup")]
+All_OL$Same_Biomarker=All_OL$FDA_Biomarker_1==All_OL$FDA_Biomarker_2
+Vec=All_OL[,c("MemberId","FDA_Biomarker_1","Same_Biomarker","AgeGroup")]
 Vec=Vec[Vec$FDA_Biomarker_1!="",]
 Vec=unique(Vec[Vec$Same_Biomarker==TRUE,])
 On_the_same_Biomarker=Vec
 
-Vec_Save$Same_FDA_Therapeutic_Area=Vec_Save$FDA_Therapeutic_Area_1==Vec_Save$FDA_Therapeutic_Area_1
-Vec=Vec_Save[,c("MemberId","FDA_Therapeutic_Area_1","Same_FDA_Therapeutic_Area","AgeGroup")]
+All_OL$Same_FDA_Therapeutic_Area=All_OL$FDA_Therapeutic_Area_1==All_OL$FDA_Therapeutic_Area_1
+Vec=All_OL[,c("MemberId","FDA_Therapeutic_Area_1","Same_FDA_Therapeutic_Area","AgeGroup")]
 Vec=Vec[Vec$FDA_Therapeutic_Area_1!="",]
 Vec=unique(Vec[Vec$Same_FDA_Therapeutic_Area==TRUE,])
 On_the_Same_FDA_Therapeutic_Area=Vec
@@ -87,4 +87,4 @@ On_the_Same_FDA_Therapeutic_Area=Vec
 #Biomarker vs. number of people in each age group 
 
 
-save(Vec_Save,NumberOfChildrens,NumberOfAdults,NumberOfChildrens_Co_dispenses,NumberOfAdults_Co_dispenses,MAPB_pair_Co_dispenses,On_the_same_Biomarker,On_the_Same_FDA_Therapeutic_Area,file = paste0('Co_dispenses_Aggregated.Rdata'))
+save(All_OL,NumberOfChildrens,NumberOfAdults,NumberOfChildrens_Co_dispenses,NumberOfAdults_Co_dispenses,MAPB_pair_Co_dispenses,On_the_same_Biomarker,On_the_Same_FDA_Therapeutic_Area,file = paste0('Co_dispenses_Aggregated.Rdata'))

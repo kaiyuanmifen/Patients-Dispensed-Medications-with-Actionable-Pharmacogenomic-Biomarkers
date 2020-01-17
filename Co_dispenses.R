@@ -20,8 +20,8 @@ for (i in (1:nrow(MAPB_List))){
   MAPB_List$FDA_Biomarker=paste0(FDA_infor$Biomarker.[grepl(pattern = MAPB_List$MAPB_name[i],x = FDA_infor$Drug,ignore.case = T)],collapse = ",")
 
   }
-head(FDA_infor)
-
+head(MAPB_List)
+dim(MAPB_List)
 #
 #
 #
@@ -44,43 +44,17 @@ dim(PGx_Cohort_PharmacyClaim)
 
 head(PGx_Cohort_PharmacyClaim)
 
-#
-#
-#
 
-# #Load MAPB list
-#
-MAPB_List=read.csv("MAPB_NDCs_2020_0106-1.txt",sep = "\t",colClasses = "character")
-head(MAPB_List)
-
-#Include FDA biomarker and therapeutic area
-MAPB_List$FDA_Therapeutic_Area=NA
-MAPB_List$FDA_Biomarker=NA
-FDA_infor=read.csv('FDAPGx_BioMarker_InDrugLabeling - Sheet1.csv')
-FDA_infor$Therapeutic.Area.=as.character(FDA_infor$Therapeutic.Area.)
-FDA_infor$Biomarker.=as.character(FDA_infor$Biomarker.)
-
-for (i in (1:nrow(MAPB_List))){
-  MAPB_List$FDA_Therapeutic_Area[i]=paste0(FDA_infor$Therapeutic.Area.[grepl(pattern = MAPB_List$MAPB_name[i],x = FDA_infor$Drug,ignore.case = T)],collapse = ",")
-  MAPB_List$FDA_Biomarker=paste0(FDA_infor$Biomarker.[grepl(pattern = MAPB_List$MAPB_name[i],x = FDA_infor$Drug,ignore.case = T)],collapse = ",")
-
-}
-head(FDA_infor)
-
-#
-#
-#
-#
 
 # #First of all, only people with more than one drug can be kept and drug days of supplies >=14 days
 OnDrugTable=table(PGx_Cohort_PharmacyClaim$MemberId)
-
+sum(OnDrugTable>1)
 PGx_Cohort_PharmacyClaim=PGx_Cohort_PharmacyClaim[PGx_Cohort_PharmacyClaim$MemberId%in%names(OnDrugTable)[OnDrugTable>1],]
 
 PGx_Cohort_PharmacyClaim=PGx_Cohort_PharmacyClaim[PGx_Cohort_PharmacyClaim$DaysSupply>=14,]
 
 dim(PGx_Cohort_PharmacyClaim)
-
+sum(table(PGx_Cohort_PharmacyClaim$MemberId)>1)
 
 #over lap period
 head(PGx_Cohort_PharmacyClaim)
@@ -89,7 +63,7 @@ class(PGx_Cohort_PharmacyClaim$DispenseDate)
 
 library(dplyr)
 Member_MAPB=left_join(PGx_Cohort_PharmacyClaim,MAPB_List[,c("NDC","MAPB_name")],by = c("NationalDrugCode" = "NDC"))
-
+sum(table(Member_MAPB$MemberId)>1)
 head(Member_MAPB)
 
 Member_MAPB$DispenseDate=as.Date(Member_MAPB$DispenseDate)
@@ -139,9 +113,12 @@ TaskID=as.integer(commandArgs(trailingOnly = T)[[1]][1])
 print(TaskID)
 
 for (i in  (((TaskID-1)*100+1):(TaskID*100))){
-  print(paste0("task ",TaskID," section ",i))
+  print(paste0("task ",TaskID," from member ",max(ceiling(length(AllMembers)/1000)*(i-1),1)," to member ",ceiling(length(AllMembers)/1000)*(i)))
+  
   Index=max(ceiling(length(AllMembers)/1000)*(i-1),1):ceiling(length(AllMembers)/1000)*(i)
+  
   Vec=Get_overLap(Member_MAPB[which(Member_MAPB$MemberId%in%AllMembers[Index]),])
+  
   Vec_Save=rbind(Vec_Save,Vec)
 }
 
