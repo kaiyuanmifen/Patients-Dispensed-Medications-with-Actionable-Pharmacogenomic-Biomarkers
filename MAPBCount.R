@@ -1,26 +1,10 @@
 
 print("count of PGx usage")
 
-#Load MAPB list 
+#Load MAPB list with genetic biomarker and therapeutic areas 
 
-MAPB_List=read.csv("MAPB_NDCs_2020_0106-1.txt",sep = "\t",colClasses = "character")
-head(MAPB_List)
-length(unique(MAPB_List$MAPB_name))
-
-#Include FDA biomarker and therapeutic area 
-MAPB_List$FDA_Therapeutic_Area=NA
-MAPB_List$FDA_Biomarker=NA
-FDA_infor=read.csv('FDAPGx_BioMarker_InDrugLabeling - Sheet1.csv')
-FDA_infor$Therapeutic.Area.=as.character(FDA_infor$Therapeutic.Area.)
-FDA_infor$Biomarker.=as.character(FDA_infor$Biomarker.)
-
-for (i in (1:nrow(MAPB_List))){
-  MAPB_List$FDA_Therapeutic_Area[i]=paste0(FDA_infor$Therapeutic.Area.[grepl(pattern = MAPB_List$MAPB_name[i],x = FDA_infor$Drug,ignore.case = T)],collapse = ",")
-  MAPB_List$FDA_Biomarker[i]=paste0(FDA_infor$Biomarker.[grepl(pattern = MAPB_List$MAPB_name[i],x = FDA_infor$Drug,ignore.case = T)],collapse = ",")
-  
-  }
-head(FDA_infor)
-
+source('Get_GeneticBiomarkers_therapeuticArea.R')
+MAPB_List=Get_MAPBList_with_biomarker_therapeutic_are()
 
 
 
@@ -94,12 +78,11 @@ Gender_Count_In_Cohort=table(PGx_Cohort_Members$Gender)
 Gender_On_MAPB_headCount_Table=table(Member_MAPB[,c("MAPB_name",'Gender')])
 
 
+
 #By therapeutic area and Age group 
-MAPB_List$FDA_Therapeutic_Area=gsub(",.*$", "",MAPB_List$FDA_Therapeutic_Area)#pick first item is there are several 
-MAPB_List$FDA_Biomarker=gsub(",.*$", "",MAPB_List$FDA_Biomarker)
+MAPB_List=Get_MAPBList_with_biomarker_therapeutic_are(Split_item=T)#MAPB with multiple Therapeutic areas/biomarkes wer split into differnet rows
 
-
-Member_MAPB=left_join(Member_MAPB,MAPB_List[,c("MAPB_name","FDA_Therapeutic_Area","FDA_Biomarker")],by = c("MAPB_name" = "MAPB_name"))
+Member_MAPB=left_join(Member_MAPB,MAPB_List[,c("MAPB_name","FDA_Therapeutic_Area","Biomarker")],by = c("MAPB_name" = "MAPB_name"))
 
 Vec=Member_MAPB[,c("MemberId","AgeGroup","FDA_Therapeutic_Area")]
 library(dplyr)
@@ -107,9 +90,9 @@ Vec=distinct(Vec)
 Member_Therapeutic_area_agegroup_table=table(Vec[,c("AgeGroup","FDA_Therapeutic_Area")])
 
 #By Biomarker and Age group
-Vec=Member_MAPB[,c("MemberId","AgeGroup","FDA_Biomarker")]
+Vec=Member_MAPB[,c("MemberId","AgeGroup","Biomarker")]
 Vec=distinct(Vec)#remove repeats 
-Member_Biomarker_agegroup_table=table(Vec[,c("AgeGroup","FDA_Biomarker")])
+Member_Biomarker_agegroup_table=table(Vec[,c("AgeGroup","Biomarker")])
 
 
 # by Gender and Age group 

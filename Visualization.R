@@ -1,7 +1,7 @@
 load("OutPut.Rdata")
 
 load("Co_dispenses_Aggregated.Rdata")
-
+source('Get_GeneticBiomarkers_therapeuticArea.R')
 FileDir="../../figures"
 
 #general count ( not part of the paper)
@@ -10,7 +10,7 @@ write.csv(AgeTable,file = file.path(FileDir,"On_MAPB_count_by_Age_group.csv"))
 print(paste("number of adults:",NumberOfAdults))
 print(paste("number of children:",NumberOfChildrens))
 print(paste("total number of people in the cohort:",Total_Number_of_People))
-print(paste(100*Number_Of_People_on_MAPB/Total_Number_of_People,"% of people in the cohort:"))
+print(paste(100*Number_Of_People_on_MAPB/Total_Number_of_People,"% of people in the cohort on MAPB"))
 
 
 
@@ -31,23 +31,8 @@ print(paste(100*(SexTable[2,]/sum(SexTable[2,]))[2],"% of male on MAPB"))
 
 #Load MAPB list 
 
-MAPB_List=read.csv("MAPB_NDCs_2020_0106-1.txt",sep = "\t",colClasses = "character")
+MAPB_List=Get_MAPBList_with_biomarker_therapeutic_are()
 head(MAPB_List)
-
-#Include FDA biomarker and therapeutic area 
-MAPB_List$FDA_Therapeutic_Area=NA
-MAPB_List$FDA_Biomarker=NA
-FDA_infor=read.csv('FDAPGx_BioMarker_InDrugLabeling - Sheet1.csv')
-FDA_infor$Therapeutic.Area.=as.character(FDA_infor$Therapeutic.Area.)
-FDA_infor$Biomarker.=as.character(FDA_infor$Biomarker.)
-
-for (i in (1:nrow(MAPB_List))){
-  MAPB_List$FDA_Therapeutic_Area[i]=paste0(FDA_infor$Therapeutic.Area.[grepl(pattern = MAPB_List$MAPB_name[i],x = FDA_infor$Drug,ignore.case = T)],collapse = ",")
-  MAPB_List$FDA_Biomarker[i]=paste0(FDA_infor$Biomarker[grepl(pattern = MAPB_List$MAPB_name[i],x = as.character(FDA_infor$Drug),ignore.case = T)],collapse = ",")
-  
-}
-head(MAPB_List)
-
 
 #Table 1 
 
@@ -71,10 +56,10 @@ Table1$Adult_MAPB=Col$MAPB_name
 Table1$Adult_Count=Col$Freq
 Table1$Adult_Percentage=100*signif(Col$Freq/AgeGroup_Count_In_Cohort[2],3)
 
-Table1$Biomarker_Children=MAPB_List$FDA_Biomarker[match(Table1$Children_MAPB,MAPB_List$MAPB_name)]
-Table1$Biomarker_Adult=MAPB_List$FDA_Biomarker[match(Table1$Adult_MAPB,MAPB_List$MAPB_name)]
-Table1$source_Children=""
-Table1$source_Adult=""
+Table1$Biomarker_Children=MAPB_List$Biomarker[match(Table1$Children_MAPB,MAPB_List$MAPB_name)]
+Table1$Biomarker_Adult=MAPB_List$Biomarker[match(Table1$Adult_MAPB,MAPB_List$MAPB_name)]
+Table1$source_Children=MAPB_List$Source[match(Table1$Children_MAPB,MAPB_List$MAPB_name)]
+Table1$source_Adult=MAPB_List$Source[match(Table1$Adult_MAPB,MAPB_List$MAPB_name)]
 names(Table1)
 Table1=Table1[,c("Children_MAPB" ,"Children_Count","Children_Percentage","Biomarker_Children","source_Children",
                  "Adult_MAPB", "Adult_Count","Adult_Percentage","Biomarker_Adult","source_Adult")]
@@ -204,8 +189,8 @@ By_Biomarer_A_C<-ggplot(data=PlotVec, aes(x=reorder(BioMarker,Percentage), y=Per
 
 
 print(paste(sum(PlotVec$Percentage[PlotVec$BioMarker=="CYP2D6"]), "% people on CYP2D6 MAPB"))
+print(paste(sum(PlotVec$Percentage[PlotVec$BioMarker=="G6PD"]), "% people on G6PD MAPB"))
 print(paste(sum(PlotVec$Percentage[PlotVec$BioMarker=="CYP2C19"]), "% people on CYP2C19 MAPB"))
-
 
 #C
 
@@ -234,13 +219,13 @@ AgeNGender=ggplot(data=PlotVec, aes(x=reorder(Sex,Percentage), y=Percentage)) +
 
 #load("Co_dispenses_Aggregated.Rdata")
 
-print(paste0("people co-dispensed PGx ",NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses))
+print(paste0("people co-dispensed MAPBs: ",NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses))
 
-print(paste0("among people on MAPB, Percentage of people co-dispensed PGx ",signif(100*((NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses)/(Number_Of_People_on_MAPB)),2),"%"))
+print(paste0("among people on MAPB, Percentage of people co-dispensed MAPBs ",signif(100*((NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses)/(Number_Of_People_on_MAPB)),2),"%"))
 
-print(paste0("Percentage of people co-dispensed PGx ",signif(100*((NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses)/(NumberOfAdults+NumberOfChildrens)),2),"%"))
-print(paste0("Percentage of adults co-dispensed PGx ",signif(100*(NumberOfAdults_Co_dispenses/NumberOfAdults),2),"%"))
-print(paste0("Percentage of adults co-dispensed PGx ",signif(100*(NumberOfChildrens_Co_dispenses/NumberOfChildrens),2),"%"))
+print(paste0("Percentage of people co-dispensed MAPBs: ",signif(100*((NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses)/(NumberOfAdults+NumberOfChildrens)),2),"%"))
+print(paste0("Percentage of adults co-dispensed MAPBs: ",signif(100*(NumberOfAdults_Co_dispenses/NumberOfAdults),2),"%"))
+print(paste0("Percentage of children co-dispensed MAPBs: ",signif(100*(NumberOfChildrens_Co_dispenses/NumberOfChildrens),2),"%"))
 
 ##most frequently- codispensed MAPB pairs 
 print(MAPB_pair_Co_dispenses[order(MAPB_pair_Co_dispenses,decreasing = T)][1])
@@ -249,9 +234,9 @@ print(MAPB_pair_Co_dispenses[order(MAPB_pair_Co_dispenses,decreasing = T)][1])
 #% dispensed on the same Biomarker
 signif(100*table(On_the_same_Biomarker$AgeGroup)/c(NumberOfChildrens,NumberOfAdults),digits = 2)
 table(On_the_same_Biomarker$AgeGroup)
-Vec=table(On_the_same_Biomarker[,c("FDA_Biomarker_1","AgeGroup")])
+Vec=table(On_the_same_Biomarker[,c("Biomarker_1","AgeGroup")])
 Vec=Vec[order(Vec[,1]+Vec[,2],decreasing = T),]
-Vec/c(NumberOfChildrens,NumberOfAdults)
+100*(Vec[1,]/c(NumberOfChildrens,NumberOfAdults))
 
 #co-dispenses on the same therapeutic area
 #% dispensed on the same therpeutic area 
@@ -266,12 +251,12 @@ Vec/c(NumberOfChildrens,NumberOfAdults)
 
 #Co-dispenses by genetic biomarker and age group in population percentage (figue 1 D)
 VecPlot=All_OL[All_OL$Same_Biomarker==T,]
-VecPlot$FDA_Biomarker_1=gsub(",.*$", "",VecPlot$FDA_Biomarker_1)
-VecPlot=VecPlot[VecPlot$FDA_Biomarker_1!='',]
+VecPlot$Biomarker_1=gsub(",.*$", "",VecPlot$Biomarker_1)
+VecPlot=VecPlot[VecPlot$Biomarker_1!='',]
 dim(VecPlot)
 head(VecPlot)
-VecPlot=unique(VecPlot[,c("MemberId","AgeGroup","FDA_Biomarker_1")])
-VecPlot=VecPlot[,c("AgeGroup","FDA_Biomarker_1")]
+VecPlot=unique(VecPlot[,c("MemberId","AgeGroup","Biomarker_1")])
+VecPlot=VecPlot[,c("AgeGroup","Biomarker_1")]
 VecPlot=data.frame(table(VecPlot))
 VecPlot$TotalPercentage=100*VecPlot$Freq/sum(c(NumberOfChildrens,NumberOfAdults))
 VecPlot$AgeGroup=as.character(VecPlot$AgeGroup)
@@ -291,26 +276,18 @@ Co_Hit_biomarker_A_C<-ggplot(data=VecPlot, aes(x=reorder(GeneticBiomarker,TotalP
 
 
 #Supplementary figure 1
-head(All_OL)
-VecPlot=All_OL$MemberId[All_OL$AgeGroup=='0-17']
-VecPlot=table(VecPlot)/2#symetric 
-VecPlot=data.frame(VecPlot)
+Vecplot=data.frame(Number_of_MAPB_co_dispensed=c("2","3","4",">=5")
+                     ,Number_of_people=c(NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses,
+                     NumberOfPeople_co_dispenses_3_MAPBs,
+                     NumberOfPeople_co_dispenses_4_MAPBs,
+                     NumberOfPeople_co_dispenses_5_MAPBs))
+Vecplot$Number_of_MAPB_co_dispensed=factor(Vecplot$Number_of_MAPB_co_dispensed,levels = c("2","3","4",">=5"))
 
-names(VecPlot)[2]="Number of co-dispensed MAPB pairs"
-Children=ggplot(VecPlot, aes(x=`Number of co-dispensed MAPB pairs`)) + geom_histogram()+ylab('Head count')+
-  theme(axis.text.x=element_text(hjust=1),text = element_text(size=20),legend.position = "bottom",
-        panel.background = element_blank(),panel.grid.major = element_line(colour = "grey", size = 0.5),
-        plot.margin=margin(t = 1.5, r = 1.5, b = 1.5, l = 1.5, unit = "cm"))
-
-VecPlot=All_OL$MemberId[All_OL$AgeGroup=='18-64']
-VecPlot=table(VecPlot)/2 #Symetric 
-VecPlot=data.frame(VecPlot)
-names(VecPlot)[2]="Number of co-dispensed MAPB pairs"
-Adult=ggplot(VecPlot, aes(x=`Number of co-dispensed MAPB pairs`)) + geom_histogram()+ylab('Head count')+
-  theme(axis.text.x=element_text(hjust=1),text = element_text(size=20),legend.position = "bottom",
-   panel.background = element_blank(),panel.grid.major = element_line(colour = "grey", size = 0.5),
-   plot.margin=margin(t = 1.5, r = 1.5, b = 1.5, l = 1.5, unit = "cm"))
-
+Figure=ggplot(Vecplot, aes(x=Number_of_MAPB_co_dispensed,y=Number_of_people)) +
+  ylab('Head count')+xlab('Number of MAPB co-dispensed')+geom_bar(stat="identity")+
+   theme(axis.text.x=element_text(hjust=1),text = element_text(size=20),legend.position = "bottom",
+         panel.background = element_blank(),panel.grid.major = element_line(colour = "grey", size = 0.5),
+         plot.margin=margin(t = 1.5, r = 1.5, b = 1.5, l = 1.5, unit = "cm"))
 
 
 library(data.table)
@@ -318,13 +295,9 @@ library(ggplot2)
 library(ggpubr)
 
 
-
-Figure=ggarrange(Children,
-                 Adult,
-                 nrow = 1,ncol=2,labels = c("A", "B"))
-
-ggsave("../../figures/SupplementaryFigure1.png", scale=0.5)
+ggsave(Figure,"../../figures/SupplementaryFigure1.png", scale=0.5)
 ggsave(Figure, file="../../figures/SupplementaryFigure1.eps", device="eps",dpi = 900,width = 11.1,height = 10.1)
+
 
 
 
@@ -346,6 +319,32 @@ ggsave(Figure, file="../../figures/CombinedFigure.eps", device="eps",dpi = 900,w
 
 
 
+
+#A information table to fill in the manuscript 
+
+Information_to_Save=NULL
+
+Information_to_Save=rbind(Information_to_Save,c("number of adults:",NumberOfAdults))
+Information_to_Save=rbind(Information_to_Save,c("number of children:",NumberOfChildrens))
+Information_to_Save=rbind(Information_to_Save,c("total number of people in the cohort:",Total_Number_of_People))
+Information_to_Save=rbind(Information_to_Save,c("% of people in the cohort on MAPB",100*Number_Of_People_on_MAPB/Total_Number_of_People))
+Information_to_Save=rbind(Information_to_Save,c("% of children on MAPB:",100*(AgeTable[1,]/sum(AgeTable[1,]))[2]))
+Information_to_Save=rbind(Information_to_Save,c("% of adult on MAPB",100*(AgeTable[2,]/sum(AgeTable[2,]))[2]))
+Information_to_Save=rbind(Information_to_Save,c("% of children on MAPB:",100*(AgeTable[1,]/sum(AgeTable[1,]))[2]))
+Information_to_Save=rbind(Information_to_Save,c("number of female:",sum(SexTable[,1])))
+Information_to_Save=rbind(Information_to_Save,c("number of male:",sum(SexTable[,2])))
+Information_to_Save=rbind(Information_to_Save,c("% of female on MAPB",100*(SexTable[1,]/sum(SexTable[1,]))[2]))
+Information_to_Save=rbind(Information_to_Save,c("% of male on MAPB",100*(SexTable[2,]/sum(SexTable[2,]))[2]))
+
+Information_to_Save=rbind(Information_to_Save,c("people co-dispensed MAPBs: ",NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses))
+Information_to_Save=rbind(Information_to_Save,c("among people on MAPB, Percentage of people co-dispensed MAPBs ",signif(100*((NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses)/(Number_Of_People_on_MAPB)),4)))
+Information_to_Save=rbind(Information_to_Save,c("Percentage of people in cohort co-dispensed MAPBs: ",signif(100*((NumberOfAdults_Co_dispenses+NumberOfChildrens_Co_dispenses)/(NumberOfAdults+NumberOfChildrens)),4)))
+Information_to_Save=rbind(Information_to_Save,c("Percentage of adults in cohort co-dispensed MAPBs: ",signif(100*(NumberOfAdults_Co_dispenses/NumberOfAdults),4)))
+Information_to_Save=rbind(Information_to_Save,c("Percentage of children co-dispensed MAPBs: ",signif(100*(NumberOfChildrens_Co_dispenses/NumberOfChildrens),4)))
+
+Information_to_Save=as.data.frame(Information_to_Save)
+head(Information_to_Save)
+write.csv(Information_to_Save,file = '../../figures/InformationSheet.csv')
 
 
 #a little bit of quality control of the data 

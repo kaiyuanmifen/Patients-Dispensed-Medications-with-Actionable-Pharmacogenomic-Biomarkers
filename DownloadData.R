@@ -10,7 +10,7 @@ library(SqlTools)
 ## This library contains functions to pivot a tall 3-column table to a design matrix
 library(FactToCube)
 
-
+## FIXME:
 
 
 
